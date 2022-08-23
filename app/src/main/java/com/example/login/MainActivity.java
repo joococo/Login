@@ -30,7 +30,7 @@ import org.json.JSONObject;
 public class MainActivity extends AppCompatActivity {
 
     EditText mID, mPassword;
-    Button mIdSignInButton, mIdSignUpButton;
+    Button mIdSignInButton;
 
     //Ad
     private AdView mAdView;
@@ -105,16 +105,6 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-
-
-        // 회원가입 버튼 클릭
-        /**mIdSignUpButton.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), RegisterActivity.class);
-                startActivity(intent);
-            }
-        });**/
 
     }
 }
