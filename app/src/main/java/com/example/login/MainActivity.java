@@ -3,14 +3,17 @@ package com.example.login;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.Manifest;
 import android.app.Activity;
 import android.app.Application;
+import android.content.Context;
 import android.content.Intent;
 import android.location.GnssAntennaInfo;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.Response;
@@ -31,9 +34,19 @@ public class MainActivity extends AppCompatActivity {
 
     EditText mID, mPassword;
     Button mIdSignInButton;
+    Context context;
+    TextView textView1, textView2;
 
     //Ad
     private AdView mAdView;
+
+    private String[] permission = {
+            Manifest.permission.ACCESS_NETWORK_STATE,
+            Manifest.permission.WRITE_EXTERNAL_STORAGE,
+            Manifest.permission.READ_EXTERNAL_STORAGE,
+            Manifest.permission.INTERNET
+    };
+
 
 
     @Override
