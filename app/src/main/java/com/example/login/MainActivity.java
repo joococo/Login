@@ -6,20 +6,23 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.Activity;
 import android.app.Application;
 import android.content.Intent;
+import android.location.GnssAntennaInfo;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.android.volley.Response;
 import com.android.volley.RequestQueue;
+import com.android.volley.toolbox.Volley;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.MobileAds;
 import com.google.android.gms.ads.appopen.AppOpenAd;
 import com.google.android.gms.ads.initialization.InitializationStatus;
 import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
-import com.google.android.gms.common.api.Response;
+import com.google.firebase.firestore.util.Listener;
 
 import org.json.JSONObject;
 
@@ -28,7 +31,6 @@ public class MainActivity extends AppCompatActivity {
 
     EditText mID, mPassword;
     Button mIdSignInButton, mIdSignUpButton;
-    static RequestQueue requestQueue;
 
     //Ad
     private AdView mAdView;
@@ -98,7 +100,7 @@ public class MainActivity extends AppCompatActivity {
                 };
 
                 LoginRequest loginRequest = new LoginRequest(userID, userPassword, responseListener);
-                RequestQueue queue = Volley.newRequestQueue(LoginActivity.this);
+                RequestQueue queue = Volley.newRequestQueue(MainActivity.this);
                 queue.add(loginRequest);
 
             }
