@@ -19,9 +19,6 @@
         android:usesCleartextTraffic="true"
         android:theme="@style/Theme.Login"
         tools:targetApi="m">
-        <meta-data
-            android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="ca-app-pub-3940256099942544~3347511713"/>
         <uses-library android:name="org.apache.http.legacy" android:required="false" />
         <activity
             android:name=".MainActivity"

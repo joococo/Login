@@ -34,11 +34,6 @@ public class MainActivity extends AppCompatActivity {
 
     EditText mID, mPassword;
     Button mIdSignInButton;
-    Context context;
-    TextView textView1, textView2;
-
-    //Ad
-    private AdView mAdView;
 
     private String[] permission = {
             Manifest.permission.ACCESS_NETWORK_STATE,
@@ -54,20 +49,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate( savedInstanceState );
         setContentView( R.layout.activity_main );
 
-        //Ads
-        MobileAds.initialize(this, new OnInitializationCompleteListener() {
-            @Override
-            public void onInitializationComplete(InitializationStatus initializationStatus) {
-            }
-        });
-
-
-
-
-        //여기서부터는 로그인 관련된 코드
-        mAdView = findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest);
 
         // Set up the login form.
         mID = (EditText) findViewById(R.id.login_stdnum);
